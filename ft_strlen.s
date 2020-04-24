@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    ft_strlen.s                                        :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: test <marvin@42.fr>                        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2020/04/21 08:21:59 by test              #+#    #+#              #
+#    Updated: 2020/04/21 08:22:01 by test             ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 			global	_ft_strlen
 
 			section	.text
@@ -7,7 +19,7 @@ _ft_strlen:
 while:
 			cmp		BYTE [rdi + rax], 0 ; if (str[i] == 0)
 			je		end                 ;     goto end
-			inc		rax                 ; i++
+			add		rax, 1              ; i++
 			jmp		while               ; goto while
 end:
 			ret                         ;return (i)
